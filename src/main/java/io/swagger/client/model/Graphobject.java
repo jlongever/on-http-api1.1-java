@@ -10,7 +10,7 @@ import io.swagger.client.model.Node;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-24T14:20:02.281-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
 public class Graphobject   {
   
   private String id = null;

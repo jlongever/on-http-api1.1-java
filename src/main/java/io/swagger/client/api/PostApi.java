@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-24T14:20:02.281-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
 public class PostApi {
   private ApiClient apiClient;
 
@@ -458,6 +458,56 @@ public class PostApi {
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    
+
+    
+
+    
+
+    final String[] localVarAccepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "auth_token" };
+
+    
+    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    
+  }
+  
+  /**
+   * create unbound workflow
+   * create unbound workflow
+   * @param name The injectable Graph name (required)
+   * @param body  (optional)
+   * @return Object
+   * @throws ApiException if fails to make API call
+   */
+  public Object workflowsPost(String name, Object body) throws ApiException {
+    Object localVarPostBody = body;
+    
+    // verify the required parameter 'name' is set
+    if (name == null) {
+      throw new ApiException(400, "Missing the required parameter 'name' when calling workflowsPost");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/workflows".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "name", name));
     
 
     
