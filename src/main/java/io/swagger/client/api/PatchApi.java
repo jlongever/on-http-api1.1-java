@@ -7,14 +7,13 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
+import io.swagger.client.model.Body;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class PatchApi {
   private ApiClient apiClient;
 
@@ -38,25 +37,24 @@ public class PatchApi {
   /**
    * patch/update server configuration
    * Patch/update server configurationm and then return the patched configuration.
-   * @param body  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object configPatch(Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 configPatch( body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling configPatch");
-    }
-    
+     // verify the required parameter 'body' is set
+     if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling configPatch");
+     }
+     
     // create path and map variables
-    String localVarPath = "/config".replaceAll("\\{format\\}","json");
+    String path = "/config".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -64,53 +62,52 @@ public class PatchApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PATCH", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Patch specified node
    * Patch specified node
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @param body object patches to apply. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @param body object patches to apply.
+   * @return InlineResponse200
    */
-  public Object nodesIdentifierPatch(String identifier, Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 nodesIdentifierPatch(String identifier, Body body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierPatch");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierPatch");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierPatch");
+     }
+     
+     // verify the required parameter 'body' is set
+     if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierPatch");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -118,47 +115,46 @@ public class PatchApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PATCH", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * patch specifics of the specified poller
    * patch specifics of the specified poller
-   * @param identifier poller identifier (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier poller identifier
+   * @return InlineResponse200
    */
-  public Object pollersIdentifierPatch(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 pollersIdentifierPatch(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling pollersIdentifierPatch");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling pollersIdentifierPatch");
+     }
+     
     // create path and map variables
-    String localVarPath = "/pollers/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/pollers/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -166,47 +162,46 @@ public class PatchApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PATCH", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * patch a single sku
    * patch a single sku
-   * @param identifier The profile name. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The profile name.
+   * @return InlineResponse200
    */
-  public Object skusIdentifierPatch(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 skusIdentifierPatch(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling skusIdentifierPatch");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling skusIdentifierPatch");
+     }
+     
     // create path and map variables
-    String localVarPath = "/skus/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/skus/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -214,21 +209,21 @@ public class PatchApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PATCH", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   

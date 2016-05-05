@@ -2,17 +2,17 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Node;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class Sku   {
   
   private String id = null;
@@ -25,12 +25,8 @@ public class Sku   {
   
   /**
    **/
-  public Sku id(String id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,12 +38,8 @@ public class Sku   {
   
   /**
    **/
-  public Sku name(String name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -59,12 +51,8 @@ public class Sku   {
   
   /**
    **/
-  public Sku rules(Object rules) {
-    this.rules = rules;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("rules")
   public Object getRules() {
     return rules;
@@ -76,12 +64,8 @@ public class Sku   {
   
   /**
    **/
-  public Sku nodes(List<Node> nodes) {
-    this.nodes = nodes;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("nodes")
   public List<Node> getNodes() {
     return nodes;
@@ -93,12 +77,8 @@ public class Sku   {
   
   /**
    **/
-  public Sku discoveryGraphName(String discoveryGraphName) {
-    this.discoveryGraphName = discoveryGraphName;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("discoveryGraphName")
   public String getDiscoveryGraphName() {
     return discoveryGraphName;
@@ -110,12 +90,8 @@ public class Sku   {
   
   /**
    **/
-  public Sku discoveryGraphOptions(Object discoveryGraphOptions) {
-    this.discoveryGraphOptions = discoveryGraphOptions;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("discoveryGraphOptions")
   public Object getDiscoveryGraphOptions() {
     return discoveryGraphOptions;
@@ -127,7 +103,7 @@ public class Sku   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -135,12 +111,12 @@ public class Sku   {
       return false;
     }
     Sku sku = (Sku) o;
-    return Objects.equals(this.id, sku.id) &&
-        Objects.equals(this.name, sku.name) &&
-        Objects.equals(this.rules, sku.rules) &&
-        Objects.equals(this.nodes, sku.nodes) &&
-        Objects.equals(this.discoveryGraphName, sku.discoveryGraphName) &&
-        Objects.equals(this.discoveryGraphOptions, sku.discoveryGraphOptions);
+    return Objects.equals(id, sku.id) &&
+        Objects.equals(name, sku.name) &&
+        Objects.equals(rules, sku.rules) &&
+        Objects.equals(nodes, sku.nodes) &&
+        Objects.equals(discoveryGraphName, sku.discoveryGraphName) &&
+        Objects.equals(discoveryGraphOptions, sku.discoveryGraphOptions);
   }
 
   @Override
@@ -167,7 +143,7 @@ public class Sku   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

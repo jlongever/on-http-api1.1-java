@@ -7,14 +7,12 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class PutApi {
   private ApiClient apiClient;
 
@@ -38,26 +36,25 @@ public class PutApi {
   /**
    * put a single profile
    * put a single profile
-   * @param identifier The profile name. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The profile name.
+   * @return InlineResponse200
    */
-  public Object profilesLibraryIdentifierPut(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 profilesLibraryIdentifierPut(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling profilesLibraryIdentifierPut");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling profilesLibraryIdentifierPut");
+     }
+     
     // create path and map variables
-    String localVarPath = "/profiles/library/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/profiles/library/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -65,47 +62,46 @@ public class PutApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Delete specific sku.
    * Delete specific sku.
-   * @param identifier The sku objectid. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The sku objectid.
+   * @return InlineResponse200
    */
-  public Object skusIdentifierDelete(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 skusIdentifierDelete(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling skusIdentifierDelete");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling skusIdentifierDelete");
+     }
+     
     // create path and map variables
-    String localVarPath = "/skus/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/skus/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -113,47 +109,46 @@ public class PutApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * put a single template
    * put a single template
-   * @param identifier objectid of template (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier objectid of template
+   * @return InlineResponse200
    */
-  public Object templatesLibraryIdentifierPut(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 templatesLibraryIdentifierPut(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling templatesLibraryIdentifierPut");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling templatesLibraryIdentifierPut");
+     }
+     
     // create path and map variables
-    String localVarPath = "/templates/library/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/templates/library/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -161,41 +156,40 @@ public class PutApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * define new workflow
    * define new workflow
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object workflowsPut(Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 workflowsPut( body) throws ApiException {
+    Object postBody = body;
     
     // create path and map variables
-    String localVarPath = "/workflows".replaceAll("\\{format\\}","json");
+    String path = "/workflows".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -203,41 +197,40 @@ public class PutApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Add tasks to task library
    * Add tasks to task library
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object workflowsTasksPut(Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 workflowsTasksPut( body) throws ApiException {
+    Object postBody = body;
     
     // create path and map variables
-    String localVarPath = "/workflows/tasks".replaceAll("\\{format\\}","json");
+    String path = "/workflows/tasks".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -245,21 +238,21 @@ public class PutApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   

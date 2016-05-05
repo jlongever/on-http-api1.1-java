@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -9,7 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class Lease   {
   
   private String mac = null;
@@ -29,12 +30,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease mac(String mac) {
-    this.mac = mac;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty("mac")
   public String getMac() {
     return mac;
@@ -46,12 +43,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease ipAddress(String ipAddress) {
-    this.ipAddress = ipAddress;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty("ipAddress")
   public String getIpAddress() {
     return ipAddress;
@@ -63,12 +56,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease reservationTimer(Integer reservationTimer) {
-    this.reservationTimer = reservationTimer;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("reservationTimer")
   public Integer getReservationTimer() {
     return reservationTimer;
@@ -80,12 +69,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease reservationExpiresAt(Long reservationExpiresAt) {
-    this.reservationExpiresAt = reservationExpiresAt;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("reservationExpiresAt")
   public Long getReservationExpiresAt() {
     return reservationExpiresAt;
@@ -97,12 +82,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease renewalTimer(Integer renewalTimer) {
-    this.renewalTimer = renewalTimer;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("renewalTimer")
   public Integer getRenewalTimer() {
     return renewalTimer;
@@ -114,12 +95,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease rebindingTimer(Integer rebindingTimer) {
-    this.rebindingTimer = rebindingTimer;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("rebindingTimer")
   public Integer getRebindingTimer() {
     return rebindingTimer;
@@ -131,12 +108,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease expirationTimer(Integer expirationTimer) {
-    this.expirationTimer = expirationTimer;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("expirationTimer")
   public Integer getExpirationTimer() {
     return expirationTimer;
@@ -148,12 +121,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease renewalExpiresAt(Long renewalExpiresAt) {
-    this.renewalExpiresAt = renewalExpiresAt;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("renewalExpiresAt")
   public Long getRenewalExpiresAt() {
     return renewalExpiresAt;
@@ -165,12 +134,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease rebindExpiresAt(Long rebindExpiresAt) {
-    this.rebindExpiresAt = rebindExpiresAt;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("rebindExpiresAt")
   public Long getRebindExpiresAt() {
     return rebindExpiresAt;
@@ -182,12 +147,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease leaseExpiresAt(Long leaseExpiresAt) {
-    this.leaseExpiresAt = leaseExpiresAt;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("leaseExpiresAt")
   public Long getLeaseExpiresAt() {
     return leaseExpiresAt;
@@ -199,12 +160,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease boundFlag(Boolean boundFlag) {
-    this.boundFlag = boundFlag;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("boundFlag")
   public Boolean getBoundFlag() {
     return boundFlag;
@@ -216,12 +173,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease reservedFlag(Boolean reservedFlag) {
-    this.reservedFlag = reservedFlag;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("reservedFlag")
   public Boolean getReservedFlag() {
     return reservedFlag;
@@ -233,12 +186,8 @@ public class Lease   {
   
   /**
    **/
-  public Lease reserveTimer(String reserveTimer) {
-    this.reserveTimer = reserveTimer;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("reserveTimer")
   public String getReserveTimer() {
     return reserveTimer;
@@ -250,7 +199,7 @@ public class Lease   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -258,19 +207,19 @@ public class Lease   {
       return false;
     }
     Lease lease = (Lease) o;
-    return Objects.equals(this.mac, lease.mac) &&
-        Objects.equals(this.ipAddress, lease.ipAddress) &&
-        Objects.equals(this.reservationTimer, lease.reservationTimer) &&
-        Objects.equals(this.reservationExpiresAt, lease.reservationExpiresAt) &&
-        Objects.equals(this.renewalTimer, lease.renewalTimer) &&
-        Objects.equals(this.rebindingTimer, lease.rebindingTimer) &&
-        Objects.equals(this.expirationTimer, lease.expirationTimer) &&
-        Objects.equals(this.renewalExpiresAt, lease.renewalExpiresAt) &&
-        Objects.equals(this.rebindExpiresAt, lease.rebindExpiresAt) &&
-        Objects.equals(this.leaseExpiresAt, lease.leaseExpiresAt) &&
-        Objects.equals(this.boundFlag, lease.boundFlag) &&
-        Objects.equals(this.reservedFlag, lease.reservedFlag) &&
-        Objects.equals(this.reserveTimer, lease.reserveTimer);
+    return Objects.equals(mac, lease.mac) &&
+        Objects.equals(ipAddress, lease.ipAddress) &&
+        Objects.equals(reservationTimer, lease.reservationTimer) &&
+        Objects.equals(reservationExpiresAt, lease.reservationExpiresAt) &&
+        Objects.equals(renewalTimer, lease.renewalTimer) &&
+        Objects.equals(rebindingTimer, lease.rebindingTimer) &&
+        Objects.equals(expirationTimer, lease.expirationTimer) &&
+        Objects.equals(renewalExpiresAt, lease.renewalExpiresAt) &&
+        Objects.equals(rebindExpiresAt, lease.rebindExpiresAt) &&
+        Objects.equals(leaseExpiresAt, lease.leaseExpiresAt) &&
+        Objects.equals(boundFlag, lease.boundFlag) &&
+        Objects.equals(reservedFlag, lease.reservedFlag) &&
+        Objects.equals(reserveTimer, lease.reserveTimer);
   }
 
   @Override
@@ -304,7 +253,7 @@ public class Lease   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

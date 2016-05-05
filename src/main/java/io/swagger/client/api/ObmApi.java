@@ -7,14 +7,13 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
+import io.swagger.client.model.Body1;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class ObmApi {
   private ApiClient apiClient;
 
@@ -38,26 +37,25 @@ public class ObmApi {
   /**
    * get the obm settings associated with a node.
    * get the obm settings associated with a node.
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @return InlineResponse200
    */
-  public Object nodesIdentifierObmGet(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 nodesIdentifierObmGet(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmGet");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmGet");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}/obm".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{identifier}/obm".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -65,152 +63,52 @@ public class ObmApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * Fetch status of identify light on node through OBM (if supported)
-   * Fetch status of identify light on node through OBM (if supported)
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object nodesIdentifierObmIdentifyGet(String identifier) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmIdentifyGet");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/nodes/{identifier}/obm/identify".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    String[] authNames = new String[] { "auth_token" };
 
     
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * Enable or disable identify light on node through OBM (if supported)
-   * Enable or disable identify light on node through OBM (if supported)
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @param body obm settings to apply. (required)
-   * @throws ApiException if fails to make API call
-   */
-  public void nodesIdentifierObmIdentifyPost(String identifier, Boolean body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmIdentifyPost");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmIdentifyPost");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/nodes/{identifier}/obm/identify".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * set the obm settings associated with a node.
    * set he obm settings associated with a node.
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @param body obm settings to apply. (required)
-   * @throws ApiException if fails to make API call
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @param body obm settings to apply.
+   * @return void
    */
-  public void nodesIdentifierObmPost(String identifier, Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public void nodesIdentifierObmPost(String identifier, Body1 body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmPost");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmPost");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmPost");
+     }
+     
+     // verify the required parameter 'body' is set
+     if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}/obm".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{identifier}/obm".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -218,20 +116,119 @@ public class ObmApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
+    
+  }
+  
+  /**
+   * Fetch status of identify light on node through OBM (if supported)
+   * Fetch status of identify light on node through OBM (if supported)
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @return InlineResponse200
+   */
+  public InlineResponse200 nodesIdentifierObmIdentifyGet(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmIdentifyGet");
+     }
+     
+    // create path and map variables
+    String path = "/nodes/{identifier}/obm/identify".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Enable or disable identify light on node through OBM (if supported)
+   * Enable or disable identify light on node through OBM (if supported)
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @param body obm settings to apply.
+   * @return void
+   */
+  public void nodesIdentifierObmIdentifyPost(String identifier, Boolean body) throws ApiException {
+    Object postBody = body;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmIdentifyPost");
+     }
+     
+     // verify the required parameter 'body' is set
+     if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmIdentifyPost");
+     }
+     
+    // create path and map variables
+    String path = "/nodes/{identifier}/obm/identify".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
     
   }
   

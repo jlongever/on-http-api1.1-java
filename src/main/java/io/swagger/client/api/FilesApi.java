@@ -7,14 +7,12 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class FilesApi {
   private ApiClient apiClient;
 
@@ -36,74 +34,27 @@ public class FilesApi {
 
   
   /**
-   * delete file based on uuid
-   * Put file based on filename, returns the uuid of the stored file.
-   * @param fileidentifier filename identifier of the file you wish to delete (required)
-   * @throws ApiException if fails to make API call
-   */
-  public void filesFileidentifierDelete(String fileidentifier) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'fileidentifier' is set
-    if (fileidentifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierDelete");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "fileidentifier" + "\\}", apiClient.escapeString(fileidentifier.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
-    
-  }
-  
-  /**
    * get file based on uuid
    * Get file based on uuid.
-   * @param fileidentifier uuid of a file as provided when you originally stored it. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param fileidentifier uuid of a file as provided when you originally stored it.
+   * @return InlineResponse200
    */
-  public Object filesFileidentifierGet(String fileidentifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 filesFileidentifierGet(String fileidentifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'fileidentifier' is set
-    if (fileidentifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierGet");
-    }
-    
+     // verify the required parameter 'fileidentifier' is set
+     if (fileidentifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierGet");
+     }
+     
     // create path and map variables
-    String localVarPath = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
+    String path = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "fileidentifier" + "\\}", apiClient.escapeString(fileidentifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -111,47 +62,46 @@ public class FilesApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * put file based on filename
    * Put file based on filename, returns the uuid of the stored file.
-   * @param fileidentifier filename of the file you want to store (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param fileidentifier filename of the file you want to store
+   * @return InlineResponse200
    */
-  public Object filesFileidentifierPut(String fileidentifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 filesFileidentifierPut(String fileidentifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'fileidentifier' is set
-    if (fileidentifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierPut");
-    }
-    
+     // verify the required parameter 'fileidentifier' is set
+     if (fileidentifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierPut");
+     }
+     
     // create path and map variables
-    String localVarPath = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
+    String path = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "fileidentifier" + "\\}", apiClient.escapeString(fileidentifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -159,21 +109,67 @@ public class FilesApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * delete file based on uuid
+   * Put file based on filename, returns the uuid of the stored file.
+   * @param fileidentifier filename identifier of the file you wish to delete
+   * @return void
+   */
+  public void filesFileidentifierDelete(String fileidentifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'fileidentifier' is set
+     if (fileidentifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierDelete");
+     }
+     
+    // create path and map variables
+    String path = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "fileidentifier" + "\\}", apiClient.escapeString(fileidentifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
     
   }
   

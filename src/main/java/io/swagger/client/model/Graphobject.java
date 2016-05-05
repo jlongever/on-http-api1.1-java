@@ -2,6 +2,7 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Node;
@@ -10,7 +11,7 @@ import io.swagger.client.model.Node;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class Graphobject   {
   
   private String id = null;
@@ -23,12 +24,8 @@ public class Graphobject   {
   
   /**
    **/
-  public Graphobject id(String id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -40,12 +37,8 @@ public class Graphobject   {
   
   /**
    **/
-  public Graphobject instanceid(String instanceid) {
-    this.instanceid = instanceid;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("instanceid")
   public String getInstanceid() {
     return instanceid;
@@ -57,12 +50,8 @@ public class Graphobject   {
   
   /**
    **/
-  public Graphobject context(Object context) {
-    this.context = context;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("context")
   public Object getContext() {
     return context;
@@ -74,12 +63,8 @@ public class Graphobject   {
   
   /**
    **/
-  public Graphobject definition(Object definition) {
-    this.definition = definition;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("definition")
   public Object getDefinition() {
     return definition;
@@ -91,12 +76,8 @@ public class Graphobject   {
   
   /**
    **/
-  public Graphobject tasks(Object tasks) {
-    this.tasks = tasks;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("tasks")
   public Object getTasks() {
     return tasks;
@@ -108,12 +89,8 @@ public class Graphobject   {
   
   /**
    **/
-  public Graphobject node(Node node) {
-    this.node = node;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("node")
   public Node getNode() {
     return node;
@@ -125,7 +102,7 @@ public class Graphobject   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -133,12 +110,12 @@ public class Graphobject   {
       return false;
     }
     Graphobject graphobject = (Graphobject) o;
-    return Objects.equals(this.id, graphobject.id) &&
-        Objects.equals(this.instanceid, graphobject.instanceid) &&
-        Objects.equals(this.context, graphobject.context) &&
-        Objects.equals(this.definition, graphobject.definition) &&
-        Objects.equals(this.tasks, graphobject.tasks) &&
-        Objects.equals(this.node, graphobject.node);
+    return Objects.equals(id, graphobject.id) &&
+        Objects.equals(instanceid, graphobject.instanceid) &&
+        Objects.equals(context, graphobject.context) &&
+        Objects.equals(definition, graphobject.definition) &&
+        Objects.equals(tasks, graphobject.tasks) &&
+        Objects.equals(node, graphobject.node);
   }
 
   @Override
@@ -165,7 +142,7 @@ public class Graphobject   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

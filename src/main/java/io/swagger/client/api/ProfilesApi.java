@@ -7,14 +7,12 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class ProfilesApi {
   private ApiClient apiClient;
 
@@ -38,19 +36,18 @@ public class ProfilesApi {
   /**
    * get list of possible profiles
    * get list of possible profiles
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @return InlineResponse200
    */
-  public Object profilesLibraryGet() throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 profilesLibraryGet() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/profiles/library".replaceAll("\\{format\\}","json");
+    String path = "/profiles/library".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -58,47 +55,46 @@ public class ProfilesApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * get a single profile
    * get a single profile
-   * @param identifier The profile name. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The profile name.
+   * @return InlineResponse200
    */
-  public Object profilesLibraryIdentifierGet(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 profilesLibraryIdentifierGet(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling profilesLibraryIdentifierGet");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling profilesLibraryIdentifierGet");
+     }
+     
     // create path and map variables
-    String localVarPath = "/profiles/library/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/profiles/library/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -106,47 +102,46 @@ public class ProfilesApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * put a single profile
    * put a single profile
-   * @param identifier The profile name. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The profile name.
+   * @return InlineResponse200
    */
-  public Object profilesLibraryIdentifierPut(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 profilesLibraryIdentifierPut(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling profilesLibraryIdentifierPut");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling profilesLibraryIdentifierPut");
+     }
+     
     // create path and map variables
-    String localVarPath = "/profiles/library/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/profiles/library/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -154,47 +149,46 @@ public class ProfilesApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Delete specific sku.
    * Delete specific sku.
-   * @param identifier The sku objectid. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The sku objectid.
+   * @return InlineResponse200
    */
-  public Object skusIdentifierDelete(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 skusIdentifierDelete(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling skusIdentifierDelete");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling skusIdentifierDelete");
+     }
+     
     // create path and map variables
-    String localVarPath = "/skus/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/skus/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -202,21 +196,21 @@ public class ProfilesApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   

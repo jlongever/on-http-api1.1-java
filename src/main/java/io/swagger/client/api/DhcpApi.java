@@ -8,14 +8,12 @@ import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
 import io.swagger.client.model.Lease;
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class DhcpApi {
   private ApiClient apiClient;
 
@@ -40,18 +38,17 @@ public class DhcpApi {
    * get DHCP lease table
    * Fetch the dhcp leases.
    * @return List<Lease>
-   * @throws ApiException if fails to make API call
    */
   public List<Lease> dhcpGet() throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/dhcp".replaceAll("\\{format\\}","json");
+    String path = "/dhcp".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -59,95 +56,46 @@ public class DhcpApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<List<Lease>> localVarReturnType = new GenericType<List<Lease>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * get list of all catalogs
-   * Delete the lease for the mac specified and return information about deleted lease.
-   * @param mac identifier of a mac address (required)
-   * @return List<Lease>
-   * @throws ApiException if fails to make API call
-   */
-  public List<Lease> dhcpLeaseMacDelete(String mac) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'mac' is set
-    if (mac == null) {
-      throw new ApiException(400, "Missing the required parameter 'mac' when calling dhcpLeaseMacDelete");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/dhcp/lease/{mac}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "mac" + "\\}", apiClient.escapeString(mac.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    String[] authNames = new String[] { "auth_token" };
 
     
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<List<Lease>> localVarReturnType = new GenericType<List<Lease>>() {};
-    return apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<List<Lease>> returnType = new GenericType<List<Lease>>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * fetch lease information for the mac specified
    * Fetch lease information for the mac specified.
-   * @param mac identifier of a mac address (required)
+   * @param mac identifier of a mac address
    * @return List<Lease>
-   * @throws ApiException if fails to make API call
    */
   public List<Lease> dhcpLeaseMacGet(String mac) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'mac' is set
-    if (mac == null) {
-      throw new ApiException(400, "Missing the required parameter 'mac' when calling dhcpLeaseMacGet");
-    }
-    
+     // verify the required parameter 'mac' is set
+     if (mac == null) {
+        throw new ApiException(400, "Missing the required parameter 'mac' when calling dhcpLeaseMacGet");
+     }
+     
     // create path and map variables
-    String localVarPath = "/dhcp/lease/{mac}".replaceAll("\\{format\\}","json")
+    String path = "/dhcp/lease/{mac}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "mac" + "\\}", apiClient.escapeString(mac.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -155,46 +103,141 @@ public class DhcpApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<List<Lease>> localVarReturnType = new GenericType<List<Lease>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<List<Lease>> returnType = new GenericType<List<Lease>>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * get list of all catalogs
+   * Delete the lease for the mac specified and return information about deleted lease.
+   * @param mac identifier of a mac address
+   * @return List<Lease>
+   */
+  public List<Lease> dhcpLeaseMacDelete(String mac) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'mac' is set
+     if (mac == null) {
+        throw new ApiException(400, "Missing the required parameter 'mac' when calling dhcpLeaseMacDelete");
+     }
+     
+    // create path and map variables
+    String path = "/dhcp/lease/{mac}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "mac" + "\\}", apiClient.escapeString(mac.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<List<Lease>> returnType = new GenericType<List<Lease>>() {};
+    return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Add a whitelist of specified mac address
+   * Add a whitelist of specified mac address
+   * @param macaddress Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @param body 
+   * @return InlineResponse200
+   */
+  public InlineResponse200 nodesMacaddressDhcpWhitelistPost(String macaddress,  body) throws ApiException {
+    Object postBody = body;
+    
+     // verify the required parameter 'macaddress' is set
+     if (macaddress == null) {
+        throw new ApiException(400, "Missing the required parameter 'macaddress' when calling nodesMacaddressDhcpWhitelistPost");
+     }
+     
+    // create path and map variables
+    String path = "/nodes/{macaddress}/dhcp/whitelist".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "macaddress" + "\\}", apiClient.escapeString(macaddress.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Remove a whitelist of specified mac address
    * Remove a whitelist of specified mac address
-   * @param macaddress Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @throws ApiException if fails to make API call
+   * @param macaddress Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @return void
    */
   public void nodesMacaddressDhcpWhitelistDelete(String macaddress) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'macaddress' is set
-    if (macaddress == null) {
-      throw new ApiException(400, "Missing the required parameter 'macaddress' when calling nodesMacaddressDhcpWhitelistDelete");
-    }
-    
+     // verify the required parameter 'macaddress' is set
+     if (macaddress == null) {
+        throw new ApiException(400, "Missing the required parameter 'macaddress' when calling nodesMacaddressDhcpWhitelistDelete");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{macaddress}/dhcp/whitelist".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{macaddress}/dhcp/whitelist".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "macaddress" + "\\}", apiClient.escapeString(macaddress.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -202,69 +245,20 @@ public class DhcpApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
-    
-  }
-  
-  /**
-   * Add a whitelist of specified mac address
-   * Add a whitelist of specified mac address
-   * @param macaddress Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object nodesMacaddressDhcpWhitelistPost(String macaddress, Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'macaddress' is set
-    if (macaddress == null) {
-      throw new ApiException(400, "Missing the required parameter 'macaddress' when calling nodesMacaddressDhcpWhitelistPost");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/nodes/{macaddress}/dhcp/whitelist".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "macaddress" + "\\}", apiClient.escapeString(macaddress.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    String[] authNames = new String[] { "auth_token" };
 
     
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
     
   }
   

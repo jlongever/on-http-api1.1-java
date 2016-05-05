@@ -7,14 +7,12 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class WorkflowApi {
   private ApiClient apiClient;
 
@@ -36,124 +34,27 @@ public class WorkflowApi {
 
   
   /**
-   * Cancel currently running workflows for specified node
-   * Cancel currently running workflows for specified node
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object nodesIdentifierWorkflowsActiveDelete(String identifier) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsActiveDelete");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/nodes/{identifier}/workflows/active".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * Fetch currently running workflows for specified node
-   * Fetch currently running workflows for specified node
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object nodesIdentifierWorkflowsActiveGet(String identifier) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsActiveGet");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/nodes/{identifier}/workflows/active".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
    * Fetch all workflows for specified node
    * Fetch all workflows for specified node
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @return InlineResponse200
    */
-  public Object nodesIdentifierWorkflowsGet(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 nodesIdentifierWorkflowsGet(String identifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsGet");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsGet");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}/workflows".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{identifier}/workflows".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -161,97 +62,189 @@ public class WorkflowApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * create workflow for specified node
    * create workflow for specified node
-   * @param identifier The node unique identifier (required)
-   * @param name The injectable Graph name (required)
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The node unique identifier
+   * @param name The injectable Graph name
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object nodesIdentifierWorkflowsPost(String identifier, String name, Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 nodesIdentifierWorkflowsPost(String identifier, String name,  body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsPost");
-    }
-    
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling nodesIdentifierWorkflowsPost");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsPost");
+     }
+     
+     // verify the required parameter 'name' is set
+     if (name == null) {
+        throw new ApiException(400, "Missing the required parameter 'name' when calling nodesIdentifierWorkflowsPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}/workflows".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{identifier}/workflows".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "name", name));
-    
-
+    queryParams.addAll(apiClient.parameterToPairs("", "name", name));
     
 
     
 
-    final String[] localVarAccepts = {
+    
+
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Fetch currently running workflows for specified node
+   * Fetch currently running workflows for specified node
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @return InlineResponse200
+   */
+  public InlineResponse200 nodesIdentifierWorkflowsActiveGet(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsActiveGet");
+     }
+     
+    // create path and map variables
+    String path = "/nodes/{identifier}/workflows/active".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Cancel currently running workflows for specified node
+   * Cancel currently running workflows for specified node
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @return InlineResponse200
+   */
+  public InlineResponse200 nodesIdentifierWorkflowsActiveDelete(String identifier) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsActiveDelete");
+     }
+     
+    // create path and map variables
+    String path = "/nodes/{identifier}/workflows/active".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "DELETE", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Fetch workflows
    * Fetch workflows
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @return InlineResponse200
    */
-  public Object workflowsGet() throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 workflowsGet() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/workflows".replaceAll("\\{format\\}","json");
+    String path = "/workflows".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -259,47 +252,40 @@ public class WorkflowApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Fetch workflow by instance ID
-   * Fetch workflow by instance ID
-   * @param instanceId  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * define new workflow
+   * define new workflow
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object workflowsInstanceIdGet(String instanceId) throws ApiException {
-    Object localVarPostBody = null;
-    
-    // verify the required parameter 'instanceId' is set
-    if (instanceId == null) {
-      throw new ApiException(400, "Missing the required parameter 'instanceId' when calling workflowsInstanceIdGet");
-    }
+  public InlineResponse200 workflowsPut( body) throws ApiException {
+    Object postBody = body;
     
     // create path and map variables
-    String localVarPath = "/workflows/{instanceId}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "instanceId" + "\\}", apiClient.escapeString(instanceId.toString()));
+    String path = "/workflows".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -307,40 +293,88 @@ public class WorkflowApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * create an unbound workflow
+   * create an unbound workflow
+   * @param name The injectable Graph name
+   * @param body 
+   * @return InlineResponse200
+   */
+  public InlineResponse200 workflowsPost(String name,  body) throws ApiException {
+    Object postBody = body;
+    
+     // verify the required parameter 'name' is set
+     if (name == null) {
+        throw new ApiException(400, "Missing the required parameter 'name' when calling workflowsPost");
+     }
+     
+    // create path and map variables
+    String path = "/workflows".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+    queryParams.addAll(apiClient.parameterToPairs("", "name", name));
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * List all workflows available to run
    * List all workflows available to run
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @return InlineResponse200
    */
-  public Object workflowsLibraryGet() throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 workflowsLibraryGet() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/workflows/library".replaceAll("\\{format\\}","json");
+    String path = "/workflows/library".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -348,47 +382,46 @@ public class WorkflowApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * List all workflows available to run
    * List all workflows available to run
-   * @param injectableName  (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param injectableName 
+   * @return InlineResponse200
    */
-  public Object workflowsLibraryInjectableNameGet(String injectableName) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 workflowsLibraryInjectableNameGet(String injectableName) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'injectableName' is set
-    if (injectableName == null) {
-      throw new ApiException(400, "Missing the required parameter 'injectableName' when calling workflowsLibraryInjectableNameGet");
-    }
-    
+     // verify the required parameter 'injectableName' is set
+     if (injectableName == null) {
+        throw new ApiException(400, "Missing the required parameter 'injectableName' when calling workflowsLibraryInjectableNameGet");
+     }
+     
     // create path and map variables
-    String localVarPath = "/workflows/library/{injectableName}".replaceAll("\\{format\\}","json")
+    String path = "/workflows/library/{injectableName}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "injectableName" + "\\}", apiClient.escapeString(injectableName.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -396,132 +429,39 @@ public class WorkflowApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * create unbound workflow
-   * create unbound workflow
-   * @param name The injectable Graph name (required)
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object workflowsPost(String name, Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling workflowsPost");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/workflows".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    String[] authNames = new String[] { "auth_token" };
 
     
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "name", name));
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * define new workflow
-   * define new workflow
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object workflowsPut(Object body) throws ApiException {
-    Object localVarPostBody = body;
-    
-    // create path and map variables
-    String localVarPath = "/workflows".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Fetch tasks from task library
    * Fetch tasks from task library
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @return InlineResponse200
    */
-  public Object workflowsTasksGet() throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 workflowsTasksGet() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/workflows/tasks".replaceAll("\\{format\\}","json");
+    String path = "/workflows/tasks".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -529,82 +469,40 @@ public class WorkflowApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * List workflow tasks library
-   * List workflow tasks library
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object workflowsTasksLibraryGet() throws ApiException {
-    Object localVarPostBody = null;
-    
-    // create path and map variables
-    String localVarPath = "/workflows/tasks/library".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    String[] authNames = new String[] { "auth_token" };
 
     
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Add tasks to task library
    * Add tasks to task library
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object workflowsTasksPut(Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 workflowsTasksPut( body) throws ApiException {
+    Object postBody = body;
     
     // create path and map variables
-    String localVarPath = "/workflows/tasks".replaceAll("\\{format\\}","json");
+    String path = "/workflows/tasks".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -612,21 +510,108 @@ public class WorkflowApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * List workflow tasks library
+   * List workflow tasks library
+   * @return InlineResponse200
+   */
+  public InlineResponse200 workflowsTasksLibraryGet() throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/workflows/tasks/library".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Fetch workflow by instance ID
+   * Fetch workflow by instance ID
+   * @param instanceId 
+   * @return InlineResponse200
+   */
+  public InlineResponse200 workflowsInstanceIdGet(String instanceId) throws ApiException {
+    Object postBody = null;
+    
+     // verify the required parameter 'instanceId' is set
+     if (instanceId == null) {
+        throw new ApiException(400, "Missing the required parameter 'instanceId' when calling workflowsInstanceIdGet");
+     }
+     
+    // create path and map variables
+    String path = "/workflows/{instanceId}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "instanceId" + "\\}", apiClient.escapeString(instanceId.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   

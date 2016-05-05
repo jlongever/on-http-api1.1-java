@@ -7,14 +7,16 @@ import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 
+import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.Error;
+import io.swagger.client.model.Content;
+import io.swagger.client.model.Content1;
+import io.swagger.client.model.Identifiers;
+import io.swagger.client.model.Body1;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class PostApi {
   private ApiClient apiClient;
 
@@ -38,26 +40,25 @@ public class PostApi {
   /**
    * put file based on filename
    * Put file based on filename, returns the uuid of the stored file.
-   * @param fileidentifier filename of the file you want to store (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param fileidentifier filename of the file you want to store
+   * @return InlineResponse200
    */
-  public Object filesFileidentifierPut(String fileidentifier) throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 filesFileidentifierPut(String fileidentifier) throws ApiException {
+    Object postBody = null;
     
-    // verify the required parameter 'fileidentifier' is set
-    if (fileidentifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierPut");
-    }
-    
+     // verify the required parameter 'fileidentifier' is set
+     if (fileidentifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'fileidentifier' when calling filesFileidentifierPut");
+     }
+     
     // create path and map variables
-    String localVarPath = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
+    String path = "/files/{fileidentifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "fileidentifier" + "\\}", apiClient.escapeString(fileidentifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -65,100 +66,45 @@ public class PostApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * post id
-   * post id
-   * @param id id of thing to lookup (required)
-   * @param content foo (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object lookupsIdPost(String id, Object content) throws ApiException {
-    Object localVarPostBody = content;
-    
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling lookupsIdPost");
-    }
-    
-    // verify the required parameter 'content' is set
-    if (content == null) {
-      throw new ApiException(400, "Missing the required parameter 'content' when calling lookupsIdPost");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/lookups/{id}".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    String[] authNames = new String[] { "auth_token" };
 
     
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "PUT", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * find all
    * put all
-   * @param content foo (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param content foo
+   * @return InlineResponse200
    */
-  public Object lookupsPost(Object content) throws ApiException {
-    Object localVarPostBody = content;
+  public InlineResponse200 lookupsPost(Content content) throws ApiException {
+    Object postBody = content;
     
-    // verify the required parameter 'content' is set
-    if (content == null) {
-      throw new ApiException(400, "Missing the required parameter 'content' when calling lookupsPost");
-    }
-    
+     // verify the required parameter 'content' is set
+     if (content == null) {
+        throw new ApiException(400, "Missing the required parameter 'content' when calling lookupsPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/lookups".replaceAll("\\{format\\}","json");
+    String path = "/lookups".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -166,52 +112,52 @@ public class PostApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * Enable or disable identify light on node through OBM (if supported)
-   * Enable or disable identify light on node through OBM (if supported)
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @param body obm settings to apply. (required)
-   * @throws ApiException if fails to make API call
+   * post id
+   * post id
+   * @param id id of thing to lookup
+   * @param content foo
+   * @return InlineResponse200
    */
-  public void nodesIdentifierObmIdentifyPost(String identifier, Boolean body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 lookupsIdPost(String id, Content1 content) throws ApiException {
+    Object postBody = content;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmIdentifyPost");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmIdentifyPost");
-    }
-    
+     // verify the required parameter 'id' is set
+     if (id == null) {
+        throw new ApiException(400, "Missing the required parameter 'id' when calling lookupsIdPost");
+     }
+     
+     // verify the required parameter 'content' is set
+     if (content == null) {
+        throw new ApiException(400, "Missing the required parameter 'content' when calling lookupsIdPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}/obm/identify".replaceAll("\\{format\\}","json")
-      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+    String path = "/lookups/{id}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -219,51 +165,98 @@ public class PostApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * post
+   * post
+   * @param identifiers Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @return InlineResponse200
+   */
+  public InlineResponse200 nodesPost(Identifiers identifiers) throws ApiException {
+    Object postBody = identifiers;
+    
+     // verify the required parameter 'identifiers' is set
+     if (identifiers == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifiers' when calling nodesPost");
+     }
+     
+    // create path and map variables
+    String path = "/nodes".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * set the obm settings associated with a node.
    * set he obm settings associated with a node.
-   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @param body obm settings to apply. (required)
-   * @throws ApiException if fails to make API call
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @param body obm settings to apply.
+   * @return void
    */
-  public void nodesIdentifierObmPost(String identifier, Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public void nodesIdentifierObmPost(String identifier, Body1 body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmPost");
-    }
-    
-    // verify the required parameter 'body' is set
-    if (body == null) {
-      throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmPost");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmPost");
+     }
+     
+     // verify the required parameter 'body' is set
+     if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}/obm".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{identifier}/obm".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -271,104 +264,154 @@ public class PostApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
+    
+  }
+  
+  /**
+   * Enable or disable identify light on node through OBM (if supported)
+   * Enable or disable identify light on node through OBM (if supported)
+   * @param identifier Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @param body obm settings to apply.
+   * @return void
+   */
+  public void nodesIdentifierObmIdentifyPost(String identifier, Boolean body) throws ApiException {
+    Object postBody = body;
+    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierObmIdentifyPost");
+     }
+     
+     // verify the required parameter 'body' is set
+     if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling nodesIdentifierObmIdentifyPost");
+     }
+     
+    // create path and map variables
+    String path = "/nodes/{identifier}/obm/identify".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json", "application/x-gzip"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] { "auth_token" };
+
+    
+    apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, null);
     
   }
   
   /**
    * create workflow for specified node
    * create workflow for specified node
-   * @param identifier The node unique identifier (required)
-   * @param name The injectable Graph name (required)
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param identifier The node unique identifier
+   * @param name The injectable Graph name
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object nodesIdentifierWorkflowsPost(String identifier, String name, Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 nodesIdentifierWorkflowsPost(String identifier, String name,  body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsPost");
-    }
-    
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling nodesIdentifierWorkflowsPost");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling nodesIdentifierWorkflowsPost");
+     }
+     
+     // verify the required parameter 'name' is set
+     if (name == null) {
+        throw new ApiException(400, "Missing the required parameter 'name' when calling nodesIdentifierWorkflowsPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{identifier}/workflows".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{identifier}/workflows".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "name", name));
-    
-
+    queryParams.addAll(apiClient.parameterToPairs("", "name", name));
     
 
     
 
-    final String[] localVarAccepts = {
+    
+
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * Add a whitelist of specified mac address
    * Add a whitelist of specified mac address
-   * @param macaddress Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @param macaddress Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings.
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object nodesMacaddressDhcpWhitelistPost(String macaddress, Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 nodesMacaddressDhcpWhitelistPost(String macaddress,  body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'macaddress' is set
-    if (macaddress == null) {
-      throw new ApiException(400, "Missing the required parameter 'macaddress' when calling nodesMacaddressDhcpWhitelistPost");
-    }
-    
+     // verify the required parameter 'macaddress' is set
+     if (macaddress == null) {
+        throw new ApiException(400, "Missing the required parameter 'macaddress' when calling nodesMacaddressDhcpWhitelistPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/nodes/{macaddress}/dhcp/whitelist".replaceAll("\\{format\\}","json")
+    String path = "/nodes/{macaddress}/dhcp/whitelist".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "macaddress" + "\\}", apiClient.escapeString(macaddress.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -376,87 +419,39 @@ public class PostApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-    
-  }
-  
-  /**
-   * post
-   * post
-   * @param identifiers Mac addresses and unique aliases to identify the node by, |\nexpect a string or an array of strings. (required)
-   * @return Object
-   * @throws ApiException if fails to make API call
-   */
-  public Object nodesPost(Object identifiers) throws ApiException {
-    Object localVarPostBody = identifiers;
-    
-    // verify the required parameter 'identifiers' is set
-    if (identifiers == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifiers' when calling nodesPost");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/nodes".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    String[] authNames = new String[] { "auth_token" };
 
     
-
-    
-
-    
-
-    final String[] localVarAccepts = {
-      "application/json", "application/x-gzip"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "auth_token" };
-
-    
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * create a sku
    * create a sku
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * @return InlineResponse200
    */
-  public Object skusPost() throws ApiException {
-    Object localVarPostBody = null;
+  public InlineResponse200 skusPost() throws ApiException {
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/skus".replaceAll("\\{format\\}","json");
+    String path = "/skus".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -464,71 +459,70 @@ public class PostApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
-   * create unbound workflow
-   * create unbound workflow
-   * @param name The injectable Graph name (required)
-   * @param body  (optional)
-   * @return Object
-   * @throws ApiException if fails to make API call
+   * create an unbound workflow
+   * create an unbound workflow
+   * @param name The injectable Graph name
+   * @param body 
+   * @return InlineResponse200
    */
-  public Object workflowsPost(String name, Object body) throws ApiException {
-    Object localVarPostBody = body;
+  public InlineResponse200 workflowsPost(String name,  body) throws ApiException {
+    Object postBody = body;
     
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling workflowsPost");
-    }
-    
+     // verify the required parameter 'name' is set
+     if (name == null) {
+        throw new ApiException(400, "Missing the required parameter 'name' when calling workflowsPost");
+     }
+     
     // create path and map variables
-    String localVarPath = "/workflows".replaceAll("\\{format\\}","json");
+    String path = "/workflows".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "name", name));
-    
-
+    queryParams.addAll(apiClient.parameterToPairs("", "name", name));
     
 
     
 
-    final String[] localVarAccepts = {
+    
+
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<Object> localVarReturnType = new GenericType<Object>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<InlineResponse200> returnType = new GenericType<InlineResponse200>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   

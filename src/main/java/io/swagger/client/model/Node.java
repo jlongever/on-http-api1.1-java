@@ -2,19 +2,19 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Catalog;
 import io.swagger.client.model.Graphobject;
 import io.swagger.client.model.Sku;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class Node   {
   
   private String id = null;
@@ -29,12 +29,8 @@ public class Node   {
   
   /**
    **/
-  public Node id(String id) {
-    this.id = id;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -46,12 +42,8 @@ public class Node   {
   
   /**
    **/
-  public Node profile(String profile) {
-    this.profile = profile;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty("profile")
   public String getProfile() {
     return profile;
@@ -63,12 +55,8 @@ public class Node   {
   
   /**
    **/
-  public Node name(String name) {
-    this.name = name;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -80,12 +68,8 @@ public class Node   {
   
   /**
    **/
-  public Node obmSettings(Object obmSettings) {
-    this.obmSettings = obmSettings;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("obmSettings")
   public Object getObmSettings() {
     return obmSettings;
@@ -97,12 +81,8 @@ public class Node   {
   
   /**
    **/
-  public Node ipAddresses(Object ipAddresses) {
-    this.ipAddresses = ipAddresses;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("ipAddresses")
   public Object getIpAddresses() {
     return ipAddresses;
@@ -114,12 +94,8 @@ public class Node   {
   
   /**
    **/
-  public Node workflows(List<Graphobject> workflows) {
-    this.workflows = workflows;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("workflows")
   public List<Graphobject> getWorkflows() {
     return workflows;
@@ -131,12 +107,8 @@ public class Node   {
   
   /**
    **/
-  public Node catalogs(List<Catalog> catalogs) {
-    this.catalogs = catalogs;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("catalogs")
   public List<Catalog> getCatalogs() {
     return catalogs;
@@ -148,12 +120,8 @@ public class Node   {
   
   /**
    **/
-  public Node sku(Sku sku) {
-    this.sku = sku;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("sku")
   public Sku getSku() {
     return sku;
@@ -165,7 +133,7 @@ public class Node   {
   
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -173,14 +141,14 @@ public class Node   {
       return false;
     }
     Node node = (Node) o;
-    return Objects.equals(this.id, node.id) &&
-        Objects.equals(this.profile, node.profile) &&
-        Objects.equals(this.name, node.name) &&
-        Objects.equals(this.obmSettings, node.obmSettings) &&
-        Objects.equals(this.ipAddresses, node.ipAddresses) &&
-        Objects.equals(this.workflows, node.workflows) &&
-        Objects.equals(this.catalogs, node.catalogs) &&
-        Objects.equals(this.sku, node.sku);
+    return Objects.equals(id, node.id) &&
+        Objects.equals(profile, node.profile) &&
+        Objects.equals(name, node.name) &&
+        Objects.equals(obmSettings, node.obmSettings) &&
+        Objects.equals(ipAddresses, node.ipAddresses) &&
+        Objects.equals(workflows, node.workflows) &&
+        Objects.equals(catalogs, node.catalogs) &&
+        Objects.equals(sku, node.sku);
   }
 
   @Override
@@ -209,7 +177,7 @@ public class Node   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

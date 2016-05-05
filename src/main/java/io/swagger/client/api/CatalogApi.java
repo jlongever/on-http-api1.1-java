@@ -10,12 +10,9 @@ import io.swagger.client.Pair;
 import io.swagger.client.model.Catalog;
 import io.swagger.client.model.Error;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-03-30T15:00:31.422-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-05-05T13:17:45.132-04:00")
 public class CatalogApi {
   private ApiClient apiClient;
 
@@ -39,70 +36,68 @@ public class CatalogApi {
   /**
    * get list of all catalogs
    * The catalogs endpoint returns json data that represent the catalogs of\nall hardware in the system.
-   * @param query query object to pass through to waterline. (optional)
+   * @param query query object to pass through to waterline.
    * @return List<Catalog>
-   * @throws ApiException if fails to make API call
    */
   public List<Catalog> catalogsGet(String query) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
     // create path and map variables
-    String localVarPath = "/catalogs".replaceAll("\\{format\\}","json");
+    String path = "/catalogs".replaceAll("\\{format\\}","json");
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "query", query));
-    
-
+    queryParams.addAll(apiClient.parameterToPairs("", "query", query));
     
 
     
 
-    final String[] localVarAccepts = {
+    
+
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<List<Catalog>> localVarReturnType = new GenericType<List<Catalog>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<List<Catalog>> returnType = new GenericType<List<Catalog>>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
   /**
    * get list of all catalogs
    * The catalogs endpoint returns json data that represent the catalogs of\nall hardware in the system.
-   * @param identifier identifier of a catalog (required)
+   * @param identifier identifier of a catalog
    * @return List<Catalog>
-   * @throws ApiException if fails to make API call
    */
   public List<Catalog> catalogsIdentifierGet(String identifier) throws ApiException {
-    Object localVarPostBody = null;
+    Object postBody = null;
     
-    // verify the required parameter 'identifier' is set
-    if (identifier == null) {
-      throw new ApiException(400, "Missing the required parameter 'identifier' when calling catalogsIdentifierGet");
-    }
-    
+     // verify the required parameter 'identifier' is set
+     if (identifier == null) {
+        throw new ApiException(400, "Missing the required parameter 'identifier' when calling catalogsIdentifierGet");
+     }
+     
     // create path and map variables
-    String localVarPath = "/catalogs/{identifier}".replaceAll("\\{format\\}","json")
+    String path = "/catalogs/{identifier}".replaceAll("\\{format\\}","json")
       .replaceAll("\\{" + "identifier" + "\\}", apiClient.escapeString(identifier.toString()));
 
     // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
 
     
 
@@ -110,21 +105,21 @@ public class CatalogApi {
 
     
 
-    final String[] localVarAccepts = {
+    final String[] accepts = {
       "application/json", "application/x-gzip"
     };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+    final String accept = apiClient.selectHeaderAccept(accepts);
 
-    final String[] localVarContentTypes = {
+    final String[] contentTypes = {
       
     };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
 
-    String[] localVarAuthNames = new String[] { "auth_token" };
+    String[] authNames = new String[] { "auth_token" };
 
     
-    GenericType<List<Catalog>> localVarReturnType = new GenericType<List<Catalog>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    GenericType<List<Catalog>> returnType = new GenericType<List<Catalog>>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
   
